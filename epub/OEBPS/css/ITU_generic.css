@@ -1,0 +1,4280 @@
+/* BDT REPORT EFS EPUB
+/* Last modified on 26-Oct-2018 *Maynard
+26-Oct-2018		Added Front Matter Title paragraph styles
+16-Oct-2018		Added Normal-indent-2
+15-Oct-2018		Remove page-break-before:always; on Heading-2-next-page and added it on Chapt-title and Appendix_APX_chapter_title
+01-Oct-2018     Added CSS unicode-bidi Property to all the span.Left-to-Right rules
+12-Sep-2018     Added Character styles Span.Left-to-Right with left to right direction properties (direction: ltr)
+22-Nov-2016     Modified Table-text
+21-Nov-2016     Added Wingdings, Heading 2 no indent, Heading 3 span columns
+                Added Table text right aligned
+21-Nov-2016     Added Chapt-title-2, Chapt-title-no-indent-next-page-no-TOC, modified Endnote-text
+                modified td.td.Grey-with-white-strokes_GWS_Body-Row: reduced padding for top and bottom for body rows
+09-feb-2016:    Modified, padding for general cell padding 
+                Added Simple-table-color-header table style
+14-jan-2016:    Added tint hex numbers
+13-jan-2016:    Renamed selectors that reference blue to Color
+06-jan-2016:    Removed nth child pseudo-selector from Table alternate rows blue
+                Removed second table-alternate strokes blue declartion
+24-dec-2015:    Set border-collapse:collapse; on table {}.
+02-dec-2015:    added new table styles and table paragraph styles & Span-2-columns-10-5pt
+07-sept-2015:   added box with figure center and updated image decleration
+22-may-2015:    added div declarations for Figure and Figure_wrap
+                added table-head-left-aligned declaration
+                updated figure_wrap margins*/
+
+
+/*Color information - #e36c0a;
+These colors are defined as swatches in the InDesign EPUB template and are inserted here for reference only.
+A script in InDesign replaces the variable color #336699 or #d6e0ea defined in this .tcss file with one of the colors
+below, depending on the value of a project field.
+The tint swatches are mainly used for alternating rows in tables.
+#5F497A = Purple        #E36C0A = Orange        #4A442A = Brown         #336699 = Blue
+#CFC8D7 = Purple_tint   #F9E1CE = Orange_tint   #dad9d4 = Brown_tint    #D6E0EA = Blue_tint
+
+#943634 = Red           #CC0099 = Pink          #339933 = Green         #EE3561 = Fuchsia
+#e9d6d6 = Red_tint      #F4CCEA = Pink_tint     #d6ead6 = Green_tint    #e7a4b4 = Fuchsia_tint
+
+#009cd6 = ITU_Blue
+#D6E0EA = ITU_Blue_tint
+
+#007DB6 = Europe        #D7944B = CIS        #045D3C = Arab_States         #8D54A2 = Asia_Pacific
+#2A285E = Americas      #CE372F = Africa
+
+#000000 = 100% Black
+#191919 = 90% Black
+#4c4c4c = 70% Black
+#ededed = 5% Black
+*/
+
+/* Heading style size values
+
+Default font-size
+Heading 1 = 1.4em
+Heading 2 = 1.2em
+Heading 3 = 1.1em
+Heading 4 = 1em
+Heading 5 = 0.9em
+*/
+
+img {
+    max-width: 100%;
+}
+
+h1, h2, h3 {/*Disables iBooks hypenation for headings*/
+    -webkit-hyphens:none;
+}
+
+h1.Chapt-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1.6em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+    margin-top:24px;
+	margin-bottom:24px;
+	margin-left:0;
+	margin-right:0;
+    text-align:right;
+	page-break-before:always;
+}
+
+h1.Chapt-title-no-indent {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1.6em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+    margin-top:24px;
+	margin-bottom:24px;
+	margin-left:0;
+	margin-right:0;
+    text-align:right;
+	page-break-before:always;
+}
+
+h1.Chapt-bar-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1.6em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+    margin-top:24px;
+	margin-bottom:24px;
+	margin-left:0;
+	margin-right:0;
+    text-align:left;
+	page-break-before:always;
+}
+
+h1.Chapt-title-2 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.4em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1;
+	margin-bottom:30px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	page-break-after:avoid;	
+	text-align:left;
+	border-color:#e36c0a;
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 2px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+	page-break-before:always;
+}
+
+h1.Chapt-title-no-indent {/*this is an exact copy of Chapt-title. Neither has indents in EPUB*/
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1.6em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+    margin-top:24px;
+	margin-bottom:24px;
+	margin-left:0;
+	margin-right:0;
+    text-align:left;
+	page-break-before:always;
+}
+h1.Chapt-title-next-page {/*this is an exact copy of Chapt-title. Next page is set in InDesign*/
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1.6em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+    margin-top:24px;
+	margin-bottom:24px;
+	margin-left:0;
+	margin-right:0;
+    text-align:left;
+	page-break-before:always;
+}
+h1.Chapt-title-no-indent-next-page {/*this is an exact copy of Chapt-title. Neither has indents in EPUB Next page is set in InDesign*/
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1.6em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+    margin-top:24px;
+	margin-bottom:24px;
+	margin-left:0;
+	margin-right:0;
+    text-align:left;
+	page-break-before:always;
+}
+
+h1.Chapt-title-no-indent-next-page-no-TOC {/*this is an exact copy of Chapt-title. Neither has indents in EPUB Next page is set in InDesign*/
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1.6em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+    margin-top:24px;
+	margin-bottom:24px;
+	margin-left:0;
+	margin-right:0;
+    text-align:left;
+	page-break-before:always;
+}
+
+
+h1.Publishers-note-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.4em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1;
+	margin-bottom:30px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	page-break-after:avoid;	
+	text-align:left;
+	border-color:#e36c0a;
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 2px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+}
+h1.Title-report {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.6em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.25;
+    margin-top: 1em;
+	margin-bottom:0.25em;
+	text-align:Right;
+}
+h1.Subtitle-report {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#000000;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1.5em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.25;
+	margin-top: 0.5em;
+	margin-bottom:0.25em;
+	text-align:right;
+}
+h2.Title-report-date {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#4c4c4c;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1.5em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.25;
+	margin-top: 0.5em;
+	margin-bottom:0.5em;
+	text-align:right;
+}
+
+h1.Title-handbook {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#000000;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.6em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.25;
+	margin-top: 1em;
+	margin-bottom:0.25em;
+	text-align:left;
+}
+h1.Subtitle-handbook {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#000000;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1.5em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.25;
+	margin-top: 0.5em;
+	margin-bottom:0.5em;
+    text-align:left;
+}
+h1.Title-handbook-date {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#4c4c4c;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1.5em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.25;
+	margin-top: 0.5em;
+	margin-bottom:0.5em;
+	text-align:left;
+}
+h2.APX_heading {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1.4em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:20px;
+	page-break-after:avoid;
+	text-align:center;
+}
+h2.APX_heading-1 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1.4em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:20px;
+	page-break-after:avoid;
+	text-align:center;
+}
+h3.APX_heading-2 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1.2em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1;
+	margin-bottom:23px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:20px;
+	page-break-after:avoid;
+	text-align:left;
+}
+h2.Heading-1 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.3em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1; 
+
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;  
+    margin-top:24px;
+	margin-bottom:10px;
+	margin-left:0px;
+	margin-right:0px;
+	page-break-after:avoid;
+	text-align:left;
+}
+h2.Heading-1-back-matter {
+		-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.3em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1;
+    
+    border-color:#e36c0a;
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    padding: .25em;
+    
+    margin-top:24px;
+	margin-bottom:10px;
+	margin-left:0px;
+	margin-right:0;
+	page-break-after:avoid;
+	text-align:left;
+}
+h2.Heading-1-next-page {
+    -epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.3em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1;
+    border-color:#e36c0a;
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    margin-top:24px;
+	margin-bottom:10px;
+	margin-left:0px;
+	margin-right:0;
+	page-break-after:avoid;
+	text-align:left;
+}
+h2.Heading-1-next-page-no-indent {
+    -epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.3em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1;
+    border-color:#e36c0a;
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    margin-top:24px;
+	margin-bottom:10px;
+	margin-left:0px;
+	margin-right:0;
+	page-break-after:avoid;
+	text-align:left;
+}
+h2.Heading-1-no-indent {
+    -epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.3em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1;
+    border-color:#e36c0a;
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    margin-top:24px;
+	margin-bottom:10px;
+	margin-left:0px;
+	margin-right:0;
+	page-break-after:avoid;
+	text-align:left;
+}
+h3.Heading-2 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.2em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:9px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:24px;
+	page-break-after:avoid;	
+	text-align:left;
+}
+h3.Heading-2-back-matter {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.2em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:9px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:34px;
+	page-break-after:avoid;
+	text-align:left;
+}
+h3.Heading-2-next-page {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.2em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:9px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:34px;
+	page-break-after:avoid;
+	text-align:left;
+}
+h3.Heading-2-no-indent {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.2em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:9px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:34px;
+	page-break-after:avoid;
+	page-break-before:avoid;
+	text-align:left;
+}
+h3.Heading-2-next-page-no-indent {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.2em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:9px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:34px;
+	page-break-after:avoid;
+	text-align:left;
+}
+h4.Heading-3 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.1;
+	margin-bottom:3px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:20px;
+	page-break-after:avoid;
+	text-align:left;
+}
+h4.Heading-3-next-page {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.1;
+	margin-bottom:3px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:20px;
+	page-break-after:avoid;
+	text-align:left;
+}
+h5.Heading-4 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:15px;
+	page-break-after:avoid;
+	text-align:left;
+}
+h5.Heading-4-next-page {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:15px;
+	page-break-after:avoid;
+	text-align:left;
+}
+h6.Heading-5 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:3px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:10;
+	page-break-after:avoid;
+	text-align:left;
+}
+h6.Heading-5-centred {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:3px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:10;
+	page-break-after:avoid;
+	text-align:center;
+}
+h6.Heading-5-contact-info {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:19px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:-19px;
+}
+h6.Heading-5-next-page {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:3px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:10;
+	page-break-after:avoid;
+	text-align:left;
+}
+
+
+/* Paragraph styles (General)*/
+p.Acknowledgements {
+	-epub-hyphens:auto;
+	-webkit-hyphens:auto;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+    font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:9px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	orphans:2;
+    widows:2;
+}
+p.Acknowledgements-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1;
+	margin-bottom:14px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:center;
+	orphans:1;
+    widows:1;
+}
+h3.Acknowledgements-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1;
+	margin-bottom:14px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:center;
+	orphans:1;
+    widows:1;
+}
+
+p.Author {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.7em;
+	font-style:italic;
+	font-variant:normal;
+	line-height:1.2;
+	margin-bottom:24px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+}
+p.Box-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:15px;
+	page-break-after:avoid;
+	text-align:left;
+	orphans:99;	
+	widows:1;
+}
+p.Box-title-small {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:15px;
+	page-break-after:avoid;
+	text-align:left;
+	orphans:99;	
+	widows:1;
+}
+p.Box-title-centered {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:15px;
+	page-break-after:avoid;
+	text-align:center;
+	orphans:99;	
+	widows:1;
+}
+p.Box-shading-text {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:0px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0px;
+	text-align:left;
+	orphans:2;	
+	widows:2;
+	background-color: #ededed;
+    padding: .75em;
+    page-break-inside: avoid;
+}
+p.Box-shading-end-text {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0px;
+	text-align:left;
+	orphans:2;	
+	widows:2;
+	background-color: #ededed;
+    padding: .75em;
+    page-break-inside: avoid;
+}
+p.Box-shading-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:15px;
+	text-align:center;
+	orphans:2;	
+	widows:2;
+	background-color: #ededed;
+    padding: .75em;
+    page-break-inside: avoid;
+}
+p.Continued {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:6px;
+	page-break-after:avoid;
+	text-align:left;
+	orphans:99;	
+	widows:1;
+}
+p.Box-text {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:Calibri light, sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:6px;
+	page-break-after:avoid;
+	text-align:left;
+	orphans:99;	
+	widows:1;
+}
+p.Case-study-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	
+    border-color: #e36c0a;
+    border-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    padding: .5em;
+    
+    margin-bottom:19px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:19px;
+	text-align:left;
+	orphans:2;	
+	widows:2;
+}
+p.Figure-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:15px;
+	page-break-after:avoid;
+	text-align:left;
+	orphans:99;
+	widows:1;
+}
+p.Figure-title-small {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:15px;
+	page-break-after:avoid;
+	text-align:left;
+	orphans:99;
+	widows:1;
+}
+p.Figure-title-centered {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:15px;
+	page-break-after:avoid;
+	text-align:center;
+	orphans:99;
+	widows:1;
+}
+p.Chart-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:15px;
+	page-break-after:avoid;
+	text-align:left;
+	orphans:99;
+	widows:1;
+}
+
+p.Figure {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	text-align:center;
+}
+p.Footnote-Text {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.75em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;	
+    orphans:2;
+	widows:2;
+}
+p.Footnote-Text-8pt {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;	
+    orphans:2;
+	widows:2;
+}
+p.Footnote-Text-justified {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.75em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;	
+    orphans:2;
+	widows:2;
+}
+p.Glossary_term {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;	
+	orphans:2;
+	widows:2;
+}
+p.Glossary_term-text {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;	
+	orphans:2;
+	widows:2;
+}
+p.Heading-b {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:20px;
+	text-align:left;
+	orphans:2;	
+	widows:2;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+}
+p.Heading-bold-colored {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:20px;
+	text-align:left;
+	orphans:2;	
+	widows:2;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+}
+p.Biblio-Entry {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:19px;
+	text-indent:-19px;
+	margin-right:0;
+	margin-top:8px;
+	text-align:left;
+	orphans:2;	
+	widows:2;
+}
+p.Normal {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:8px;
+	text-align:left;
+	orphans:2;	
+	widows:2;
+}
+p.Normal-Foreword {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:8px;
+	text-align:left;
+	orphans:2;	
+	widows:2;
+}
+p.Normal-not-justified {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	orphans:2;	
+	widows:2;
+}
+p.Normal-not-justified {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	orphans:2;	
+	widows:2;
+}
+p.Normal-next-page {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	orphans:2;	
+	widows:2;
+}
+p.Normal-indent-1 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:19px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	orphans:2;	
+	widows:2;
+}
+p.Normal-indent-2 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:25px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	orphans:2;	
+	widows:2;
+}
+p.Normal-center-aligned {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:center;
+	orphans:2;	
+	widows:2;
+}
+p.Normal-contact-info {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:11px;
+	margin-left:19px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	orphans:2;
+	widows:2;
+}
+p.Normal-right-aligned {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:right;
+	orphans:2;
+	widows:2;
+}
+p.Span_2_columns_9pt {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	orphans:2;	
+	widows:2;}
+p.Span-2-columns-10pt {
+						
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.1;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	orphans:2;	
+	widows:2;}
+p.Span-2-columns-10-5pt {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	orphans:2;	
+	widows:2;
+}
+
+p.Recommendation-heading {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#000000;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:10px;
+	page-break-after:avoid;
+	text-align:left;
+	text-transform:uppercase;
+    orphans:2;
+	widows:2;
+}
+p.Recommendation-sub-heading {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#000000;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:10px;
+	page-break-after:avoid;
+	text-align:left;
+	text-transform:uppercase;
+    orphans:2;
+    widows:2;
+}
+p.Recommendation-sub-heading-blue {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:10px;
+	page-break-after:avoid;
+	text-align:left;
+	text-transform:uppercase;
+	orphans:2;
+    widows:2;
+}
+p.Resolution-heading {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#000000;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:10px;
+	page-break-after:avoid;
+	text-align:center;
+	text-transform:uppercase;
+	orphans:2;
+    widows:2;
+}
+p.Source-text {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1;
+	margin-bottom:8px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+
+p.Source-text-span {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1;
+	margin-bottom:8px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+
+p.Note {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1;
+	margin-bottom:8px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+
+p.Subtitle {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.667em;
+	font-style:italic;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+
+/* Paragraph styles (Lists)*/
+p.Alpha-list-1 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:19px;
+	margin-right:0;
+	margin-top:4px;
+	text-align:left;
+	text-indent:-19px;
+	orphans:1;
+    widows:1;
+}
+p.Alpha-list-1-contd {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:19px;
+	margin-right:0;
+	margin-top:4px;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+p.Alpha-list-2 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:34px;
+	margin-right:0;
+	margin-top:4px;
+	text-align:left;
+	text-indent:-19px;
+	orphans:1;
+	widows:1;
+}
+li.List-Paragraph {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:12px;
+	margin-left:19px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:0px;
+	orphans:2;
+    widows:2;
+}
+
+li.Bullet-list-1 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:12px;
+	margin-left:19px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:0px;
+	orphans:2;
+    widows:2;
+}
+li.Bullet-list-1-keep-next {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:12px;
+	margin-left:19px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:0px;
+	orphans:2;
+    widows:2;
+}
+li.Normal {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:12px;
+	margin-left:19px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:0px;
+	orphans:2;
+    widows:2;
+}
+p.Bullet-list-1 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:22px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:-22px;
+	orphans:2;
+    widows:2;
+}
+p.Bullet-list-1-keep-next {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:22px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:-22px;
+	orphans:2;
+    widows:2;
+}
+p.Bullet-list-2 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:34px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:-19px;
+	orphans:2;
+	widows:2;
+}
+
+p.Bullet-list-3 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:53px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:-19px;
+	orphans:2;
+	widows:2;
+}
+
+p.Dash-list-2 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:34px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:-19px;
+	orphans:2;
+	widows:2;
+}
+p.Dash-list-3 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:51px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:-19px;
+	orphans:2;
+	widows:2;
+}
+p.Number-list-1 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:19px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:-19px;
+	orphans:2;
+	widows:2;
+}
+p.Number-list-2 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:34px;
+	margin-right:24px;
+	margin-top:0;
+	text-align:left;
+	text-indent:-19px;
+	orphans:2;	
+	widows:2;
+}
+p.Roman-list-1 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:19px;
+	margin-right:0;
+	margin-top:4px;
+	text-align:left;
+	text-indent:-19px;
+	orphans:1;
+	widows:1;
+}
+p.Roman-list-2 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:34px;
+	margin-right:0;
+	margin-top:4px;
+	text-align:left;
+	text-indent:-19px;
+	orphans:1;	
+	widows:1;
+}
+/* Paragraph styles (Appendix)*/
+p.APX_chapter_title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.6em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:30px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	orphans:2;
+	widows:2;
+	page-break-before:always;
+}
+p.APX_chapter_title-next-page {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.4em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:20px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:center;
+	orphans:2;
+	widows:2;
+	page-break-before:always;
+}
+p.Appendix_APX_definitions {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:center;
+	text-transform:uppercase;
+    orphans:2;
+    widows:2;
+}
+p.Appendix_APX_list-alpha-1 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:43px;
+	margin-right:0;
+	margin-top:4px;
+	text-align:left;
+	text-indent:-19px;
+	orphans:1;
+	widows:1;
+}
+p.Appendix_APX_list-alpha-caps-1 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:60px;
+	margin-right:0;
+	margin-top:4px;
+	text-align:left;
+	text-indent:-19px;
+	orphans:1;	
+	widows:1;
+}
+p.Appendix_APX_list-number-1 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:26px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;	
+	text-indent:-26px;
+	orphans:2;
+	widows:2;
+}
+p.Appendix_APX_list-roman-1 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:60px;
+	margin-right:0;
+	margin-top:4px;
+	text-align:left;
+	text-indent:-19px;
+	orphans:1;
+	widows:1;
+}
+p.Appendix_APX_normal {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:19px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:right;
+	orphans:2;	
+	widows:2;
+}
+p.Appendix_APX_normal_bold {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:19px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:right;
+	orphans:2;
+	widows:2;
+}
+p.Appendix_APX_normal_italic {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:19px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:right;
+	orphans:2;
+	widows:2;
+}
+p.Appendix_APX_regulation {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:center;
+	orphans:2;
+	widows:2;
+}
+
+/* Paragraph styles (Article)*/
+p.Article_Article-alpha-list-1 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:50px;
+	margin-right:0;
+	margin-top:4px;
+	text-align:left;
+	text-indent:-50px;
+	orphans:1;
+	widows:1;
+}
+p.Article_Article-alpha-list-2 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:60px;
+	margin-right:0;
+	margin-top:4px;
+    text-align:left;
+	text-indent:-60px;
+	orphans:1;
+	widows:1;
+}
+p.Article_Article-alpha-list-3 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:76px;
+	margin-right:0;
+	margin-top:4px;
+	text-align:left;
+	text-indent:-76px;
+	orphans:1;	
+	widows:1;
+}
+p.Article_Article-bullet-list-1 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:50px;
+	margin-right:0;
+	margin-top:4px;
+	text-align:left;
+	text-indent:-50px;
+   	orphans:1;
+    widows:1;
+}
+p.Article_Article-double-number-list-2 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:63px;
+	margin-right:0;
+	margin-top:4px;	
+	text-align:left;
+	text-indent:-63px;
+	orphans:1;
+	widows:1;
+}
+p.Article_Article-normal {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:34px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:-34px;
+	orphans:2;
+	widows:2;
+}
+p.Article_Article-number {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#000000;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:10px;
+	page-break-after:avoid;	
+	text-align:center;
+	text-transform:uppercase;
+	orphans:2;
+    widows:2;
+}
+p.Article_Article-number-list-1 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:47px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:-47px;
+	orphans:2;
+	widows:2;
+}
+p.Article_Article-number-list-1-with-double-section-number {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:51px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:-51px;
+	orphans:2;
+	widows:2;
+}
+p.Article_Article-number-list-2 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:63px;
+	margin-right:0;
+	margin-top:4px;
+	text-align:left;
+	text-indent:-63px;
+	orphans:1;
+	widows:1;
+}
+p.Article_Article-number-list-2-with-double-section-num {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:64px;
+	margin-right:0;
+	margin-top:4px;
+	text-align:left;
+	text-indent:-64px;
+	orphans:1;
+	widows:1;
+}
+p.Article_Article-number-list-2-with-section-num {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:64px;
+	margin-right:0;
+	margin-top:4px;
+	text-align:left;
+	text-indent:-64px;
+	orphans:1;
+	widows:1;
+}
+p.Article_Article-roman-list-3 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:80px;
+	margin-right:0;
+	margin-top:4px;
+	text-align:left;
+	text-indent:-80px;
+	orphans:1;
+	widows:1;
+}
+p.Article_Article-section {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:10px;
+	page-break-after:avoid;
+	text-align:center;
+	orphans:2;
+	widows:2;
+}
+p.Article_Article-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#000000;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:10px;
+	page-break-after:avoid;
+	text-align:center;
+	orphans:2;
+	widows:2;
+}
+
+/* Paragraph style (No export)*/
+p.No-export_Copyright {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.75em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:9px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:center;
+}
+
+p.No-export_Endnote-Text {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:25px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:-25px;
+}
+p.Endnote-Text {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:25px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:-25px;
+}
+h1.Front_Matter_Title_Right_Aligned {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.4em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1;
+	margin-bottom:30px;
+	margin-left:0px;
+	margin-right:0;
+	margin-top:0;
+	
+	border-color:#e36c0a;
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 2px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+	
+	page-break-after:avoid;
+	page-break-before: always;
+	text-align:right;
+}
+h1.Front_Matter_Title_Left_Aligned {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.4em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1;
+	margin-bottom:30px;
+	margin-left:0px;
+	margin-right:0;
+	margin-top:0;
+	
+	border-color:#e36c0a;
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 2px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+	
+	page-break-after:avoid;
+	page-break-before: always;
+	text-align:left;
+}
+
+p.No-export_Endnotes-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:20px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:9px;
+	page-break-after:avoid;
+	text-align:left;
+}
+p.No-export_Executive-summary-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.4em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1;
+	margin-bottom:30px;
+	margin-left:0px;
+	margin-right:0;
+	margin-top:0;
+	
+	border-color:#e36c0a;
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 2px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+	
+	page-break-after:avoid;
+	text-align:left;
+}
+p.No-export_Figure-alignment {
+	color:#000000;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+}
+p.No-export_Footnote-text {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.75em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:14px;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	text-indent:-14px;
+	orphans:1;
+    widows:1;
+}
+p.No-export_Foreword-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.4em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1;
+	margin-bottom:30px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	page-break-after:avoid;	
+	text-align:left;
+	border-color:#e36c0a;
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 2px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+}
+p.No-export_Glossary-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.4em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	page-break-after:avoid;	
+	text-align:left;
+	border-color:#e36c0a;
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 2px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+}
+p.No-export_Green {
+	color:green;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:5px;
+	margin-left:0;
+	margin-right:15px;
+	margin-top:15px;
+	text-align:left;
+	orphans:99;
+    widows:1;
+}
+p.No-export_TOC-figure-entries {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#000000;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:25px;
+	margin-right:15px;
+	margin-top:0;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+p.No-export_TOC-figure-titles {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:3px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:14px;
+	page-break-after:avoid;
+	text-align:left;
+    orphans:2;
+	widows:2;
+}
+p.No-export_TOC-level-1 {
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:5px;
+	margin-left:0;
+	margin-right:15px;
+	margin-top:15px;
+	text-align:left;
+	orphans:99;
+    widows:1;
+}
+p.No-export_TOC-level-1-bold {
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:500;
+	line-height:1.2;
+	margin-bottom:5px;
+	margin-left:0;
+	margin-right:15px;
+	margin-top:15px;
+	text-align:left;
+	orphans:99;
+    widows:1;
+}
+p.No-export_TOC-level-1-back-matter {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:1px;
+	margin-left:0;
+	margin-right:15px;
+	margin-top:10px;
+	text-align:left;
+	orphans:99;
+	widows:1;
+}
+p.No-export_TOC-level-2 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#000000;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:25px;
+	margin-right:15px;
+	margin-top:0;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+p.No-export_TOC-level-3 {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#000000;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:35px;
+	margin-right:15px;
+	margin-top:0;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+p.No-export_TOC-level-2-back-matter {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#000000;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:43px;
+	margin-right:19px;
+	margin-top:0;
+	text-align:left;
+	text-indent:-26px;
+	orphans:1;
+	widows:1;
+}
+p.No-export_TOC-list-of-figures {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1.4em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:40px;
+	text-align:left;
+	orphans:1;
+    widows:1;
+}
+p.No-export_Table-alignment {
+	color:#000000;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	text-align:left;
+	orphans:3;
+	widows:3;
+}
+p.No-export_Table-of-Contents-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1.4em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1;
+	margin-bottom:30px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	page-break-after:avoid;	
+	text-align:left;
+	border-color:#e36c0a;
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 2px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+}
+p.No-export_Normal-centred {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:green;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:50px;
+	text-align:center;
+	orphans:2;	
+	widows:2;
+}
+/* Character styles */
+span.Colored---Normal {
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-style:normal;
+	font-weight:300;
+}
+span.Wingdings {
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-style:normal;
+    font-size:1.1em;
+}
+span.Symbol {
+	font-family:"Symbol", sans-serif;
+	font-style:normal;
+	font-weight:300;
+}
+span.Colored-bold {
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-style:normal;
+	font-weight:bold;
+}
+span.Colored-bold-italic {
+	color:#e36c0a;
+	font-style:italic;
+	font-weight:bold;
+}
+span.Colored-italic {
+	color:#e36c0a;
+	font-style:italic;
+	font-weight:normal;
+}
+span.Bold {
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-style:normal;
+	font-weight:bold;
+}
+span.Bold-underline {
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-style:normal;
+	font-weight:bold;
+	text-decoration:underline;
+}
+span.Bold-italic {
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-style:italic;
+	font-weight:bold;
+}
+span.Endnote-Reference {
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-weight:300;
+	vertical-align:super;
+}
+span.Blue {
+	color:#336699;
+}
+span.Green {
+	color:#339933;
+}
+span.Purple {
+	color:#5F497A;
+}
+span.Red {
+	color:#943634;
+}
+span.Superscript {
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-weight:300;
+	vertical-align:super;
+}
+a._idEndnoteLink {/*This styles the endnote number links in the text*/
+    color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-weight:300;
+	vertical-align:super;
+}
+a._idEndnoteAnchor {/*This styles the endnote number anchors in the actual footnote*/
+    color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-weight:300;
+	vertical-align:super;
+}
+span.Endnote-text-no {
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-weight:300;
+	vertical-align:super;
+}
+span.Footnote-Reference {
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-weight:300;
+	vertical-align:super;
+}
+a._idFootnoteLink {/*This styles the footnote number links in the text*/
+    color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-weight:300;
+	vertical-align:super;
+}
+a._idFootnoteAnchor {/*This styles the footnote number anchors in the actual footnote*/
+    color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-weight:300;
+	vertical-align:super;
+}
+span.Hyperlink {
+	color:#e36c0a;
+}
+span.Italic {
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-style:italic;
+	font-weight:300;
+}
+span.Left-to-Right {
+    font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-style:normal;
+	font-weight:300;
+    direction:ltr;
+    unicode-bidi: bidi-override;
+}
+span.Left-to-Right-bold {
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-style:normal;
+	font-weight:bold;
+    direction:ltr;
+    unicode-bidi: bidi-override;
+}
+span.Left-to-Right-Hyperlink-colored {
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-style:normal;
+	font-weight:bold;
+    direction:ltr;
+    color:#e36c0a;
+    unicode-bidi: bidi-override;
+}
+
+/*Table formatting (Table styles + paragraph styles*/
+
+table {/*general space before and after and width*/
+    margin-top: .5em;
+    margin-bottom: 1.5em;
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td{ /*general cell padding*/
+    padding:.5em; 
+}
+.Alternate-Row{
+/*In order to support alternate row shading in all user agents we have had to apply a cell style to alternate rows
+This declartion controls the shading of that alternate row
+A script ensures the variable #d6e0ea is replaced by the appropriate tint swatch when the EPUB is generated*/
+
+    background-color: #d6e0ea
+}
+
+
+td.Horizontal-lines_Colored-header-row {
+	background-color:#e36c0a;
+}
+	
+/* Horizontal lines table style*/
+thead tr.Horizontal-lines {
+    background-color: #e36c0a;
+    
+}
+tr.Horizontal-lines{
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-left: 0;
+    border-right: 0;
+}
+
+/*Table-6pt table style*/
+thead tr.Table-6pt {
+    background-color: #e36c0a; 
+}
+
+p.Table-text-head-6pt {
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:center;
+	orphans:1;
+	widows:1;
+}
+
+p.Table-text-head-6pt-right-aligned {
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:right;
+	orphans:1;
+	widows:1;
+}
+p.Table-text-6pt {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+p.Table-text-7pt {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+p.Table-text-right-aligned {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:right;
+	orphans:1;
+	widows:1;
+}
+
+p.Table-text-6pt-right-aligned {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:right;
+	orphans:1;
+	widows:1;
+}
+p.Table-head-small {
+	color:black;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:left;
+	orphans:1;
+	widows:1;
+}
+p.Table-head-small-white {
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:left;
+	orphans:1;
+	widows:1;
+}
+p.Table-head-small-white-centred {
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:center;
+	orphans:1;
+	widows:1;
+}
+
+p.Table-head-7pt-white-centred {
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:center;
+	orphans:1;
+	widows:1;
+}
+
+
+/*Table-6pt-5mm-cell-space table style*/
+thead tr.Table-6pt-5mm-cell-space {
+    background-color: #e36c0a;
+}
+
+td.Table-Alternate-Rows-Blue{
+    border-style: solid;
+    border-color: black;
+    border-width: 0px;
+    border-left: 0;
+    border-right: 0;
+}
+
+p.Table-head-small-right-align-white {
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:right;
+	orphans:1;
+	widows:1;
+}
+
+p.Table-head-small-left-align-white {
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:left;
+	orphans:1;
+	widows:1;
+}
+
+
+/*Table-Alternate-Rows-Blue-white-line table style*/
+thead tr.Table-Alternate-Rows-Blue-white-line {
+    background-color: #e36c0a;
+    border-color: #e36c0a;
+}
+
+td.Table-Alternate-Rows-Blue {
+    border-style: solid;
+    border-color: black;
+    border-width: 0px;
+    border-left: 0;
+    border-right: 0;
+}
+
+
+/*Table-Alternate-Rows-Blue table style*/
+thead .Table-Alternate-Rows-Blue {
+    background-color: #e36c0a;
+}
+
+tr.Table-Alternate-Rows-Blue:nth-child(even) {
+    background-color:#D6E0EA;
+}
+tr.Table-Alternate-Rows-Blue:nth-child(odd) {
+    background-color:white;
+}
+
+p.Table-head-left-align-white {
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:left;
+}
+p.Table-head-centred-white {
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:center;
+}
+p.Table-head-centred {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:center;
+}
+h3.Table-head-centred {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:center;
+}
+p.Table-head-right-align-white {
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:1em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:right;
+}
+
+
+/*Grey with white strokes table style*/
+
+thead tr.Grey-with-white-strokes{
+    border-style: solid;
+    border-color: black;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+td.Grey-with-white-strokes{
+    background-color: #ededed;
+}
+
+td.Grey-with-white-strokes_Grey-header-row{
+    background-color: white;
+}
+
+
+/*Colored with white strokes table style*/
+
+thead .Colored-with-white-lines {
+    background-color: #e36c0a;
+}
+
+table.Colored-with-white-lines {
+	border-collapse:collapse;
+	border-style:solid;
+    border-color: white;
+	border-width:0px;
+	margin-bottom:0px;
+	margin-top:0px;
+}
+td.Colored-with-white-lines {
+	border-left-width:2px;
+	border-left-style:solid;
+	border-left-color:white;
+	border-top-width:2px;
+	border-top-style:solid;
+	border-top-color:white;
+	border-right-width:2px;
+	border-right-style:solid;
+	border-right-color:white;
+	border-bottom-width:2px;
+	border-bottom-style:solid;
+	border-bottom-color:white;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:4px;
+	padding-right:4px;
+	vertical-align:top;
+}
+tr.Colored-with-white-lines:nth-child(odd)  {
+	background-color:#d2d2d2;
+    page-break-after:auto;
+	page-break-before:auto;
+}
+tr.Colored-with-white-lines:nth-child(even)  {
+	background-color:#fdfdfd;
+    page-break-after:auto;
+	page-break-before:auto;
+}
+td.Colored-with-white-lines_Colored-body-rows {
+	padding-bottom:4px;
+	padding-top:4px;
+}
+td.Colored-with-white-lines_Colored-header-row {
+	background-color:#e36c0a;
+	border-bottom-color:#ffffff;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	vertical-align:middle;
+}
+
+/*Colored with white strokes table style*/
+
+thead .Colored-with-white-lines-6pt {
+    background-color: #e36c0a;
+}
+
+table.Colored-with-white-lines-6pt {
+	border-collapse:collapse;
+	border-style:solid;
+    border-color: white;
+	border-width:0px;
+	margin-bottom:0px;
+	margin-top:0px;
+}
+td.Colored-with-white-lines-6pt {
+	border-left-width:2px;
+	border-left-style:solid;
+	border-left-color:white;
+	border-top-width:2px;
+	border-top-style:solid;
+	border-top-color:white;
+	border-right-width:2px;
+	border-right-style:solid;
+	border-right-color:white;
+	border-bottom-width:2px;
+	border-bottom-style:solid;
+	border-bottom-color:white;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:4px;
+	padding-right:4px;
+	vertical-align:top;
+}
+tr.Colored-with-white-lines-6pt:nth-child(odd)  {
+	background-color:#d2d2d2;
+    page-break-after:auto;
+	page-break-before:auto;
+}
+tr.Colored-with-white-lines-6pt:nth-child(even)  {
+	background-color:#fdfdfd;
+    page-break-after:auto;
+	page-break-before:auto;
+}
+td.Colored-with-white-lines-6pt_Colored-body-rows {
+	padding-bottom:4px;
+	padding-top:4px;
+}
+td.Colored-with-white-lines-6pt_Colored-header-row {
+	background-color:#e36c0a;
+	border-bottom-color:#ffffff;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	vertical-align:middle;
+}
+
+/*Colored with Grey strokes table style*/
+
+thead .Colored-with-Grey-lines {
+    background-color: #e36c0a;
+}
+
+table.Colored-with-Grey-lines {
+	border-collapse:collapse;
+	border-style:solid;
+    border-color:grey;
+	border-width:0px;
+	margin-bottom:0px;
+	margin-top:0px;
+}
+td.Colored-with-Grey-lines {
+	border-left-width:1px;
+	border-left-style:solid;
+	border-left-color:grey;
+	border-top-width:1px;
+	border-top-style:solid;
+	border-top-color:grey;
+	border-right-width:1px;
+	border-right-style:solid;
+	border-right-color:grey;
+	border-bottom-width:1px;
+	border-bottom-style:solid;
+	border-bottom-color:grey;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:4px;
+	padding-right:4px;
+	vertical-align:top;
+}
+tr.Colored-with-Grey-lines:nth-child(odd)  {
+	background-color:#d2d2d2;
+    page-break-after:auto;
+	page-break-before:auto;
+}
+tr.Colored-with-Grey-lines:nth-child(even)  {
+	background-color:#fdfdfd;
+    page-break-after:auto;
+	page-break-before:auto;
+}
+td.Colored-with-grey-lines_Colored-body-row-grey-lines {
+	padding-bottom:7px;
+	padding-top:7px;
+}
+td.Colored-with-grey-lines_Colored-header-row-grey-lines {
+	background-color:#e36c0a;
+	border-bottom-color:#ffffff;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	vertical-align:middle;
+}
+
+p.Table-head-white-centred {
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:center;
+	orphans:1;
+	widows:1;
+}
+
+p.Table-head-white-centred-6pt {
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.6em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:center;
+	orphans:1;
+	widows:1;
+}
+p.Table-head-white {
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:left;
+	orphans:1;
+	widows:1;
+}
+p.Table-head-white-right {
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:right;
+	orphans:1;
+	widows:1;
+}
+p.Table-head-centred {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:center;
+}
+
+p.Table-head-right {
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:right;
+	orphans:1;
+	widows:1;
+}
+/*Simple table table style*/
+thead .Simple-table {
+    border-style: solid;
+	border-width: 1px;
+    background-color: #e36c0a;
+	vertical-align:middle;
+}
+td.Simple-table {
+    border-style: solid;
+    border-width: 1px;
+}
+
+/*Invisible table table style*/
+table.Invisible-table {
+    /*In iBooks a table is invisible by default*/
+}
+td.Invisible-table {
+	padding-bottom:0px;
+	padding-top:0px;
+}
+/*Border only table style*/
+table.Border-only {
+    border-style: solid;
+    border-width: 2px;
+    padding: .25em;
+}
+p.Table-text-small-bullet {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:10px;
+	margin-right:0;
+	margin-top:2px;
+	text-align:left;
+	text-indent:-10px;
+	orphans:1;
+	widows:1;
+}
+p.Table-bullet {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:10px;
+	margin-right:0;
+	margin-top:2px;
+	text-align:left;
+	text-indent:-10px;
+	orphans:1;
+	widows:1;
+}
+p.Table-bullet-small {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:10px;
+	margin-right:0;
+	margin-top:2px;
+	text-align:left;
+	text-indent:-10px;
+	orphans:1;
+	widows:1;
+}
+p.Table-bullet-6pt {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.6em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:1px;
+	margin-left:10px;
+	margin-right:0;
+	margin-top:1px;
+	text-align:left;
+	text-indent:-10px;
+	orphans:1;
+	widows:1;
+}
+p.Table-bullet-2 {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:20px;
+	margin-right:0;
+	margin-top:2px;
+	text-align:left;
+	text-indent:-20px;
+	orphans:1;
+	widows:1;
+}
+p.Table-head {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:left;
+	orphans:1;
+	widows:1;
+}
+p.Table-head-left-aligned {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:left;
+	orphans:1;
+	widows:1;
+}
+p.Table-head-white-centred {
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+    text-align:center;
+	orphans:1;
+	widows:1;
+}
+
+p.Table-text {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+
+p.Table-text-shade {
+	color:#191919;
+	background-color: #ededed;
+	padding: .75em;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+
+p.Table-text-right-aligned {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:right;
+	orphans:1;
+	widows:1;
+}
+
+p.Table-text-right-aligned-shade {
+	color:#191919;
+	background-color: #ededed;
+	padding: .75em;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:right;
+	orphans:1;
+	widows:1;
+}
+
+p.Table-text-indent {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:8px;
+	margin-right:0;
+	margin-top:2px;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+
+p.Table-text-centred {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:center;
+	orphans:1;
+	widows:1;
+}
+
+p.Table-text-centred-shade {
+	color:#191919;
+	background-color: #ededed;
+	padding: .75em;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:center;
+	orphans:1;
+	widows:1;
+}
+
+p.Table-text-small-right-aligned {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:right;
+	orphans:1;
+	widows:1;
+}
+
+p.Table-text-small-left-align {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+
+p.Table-text-small-centred {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:center;
+	orphans:1;
+	widows:1;
+}
+
+p.Table-text-small {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.7em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+p.Table-text-6pt-centred {
+							
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.6em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:center;
+	orphans:1;
+	widows:1;
+}
+p.Table-text-head-6pt-centred {
+					
+	color:white;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:center;
+	orphans:1;
+	widows:1;
+}
+p.Table-text-colored {
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri Light", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:300;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+p.Table-text-bold {
+	color:#191919;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:1.2;
+	margin-bottom:2px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:2px;
+	text-align:left;
+	orphans:1;
+	widows:1;
+}
+p.Table-title {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+    margin-top:15px;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	page-break-after:avoid;
+	text-align:left;
+	orphans:99;
+	widows:1;
+}
+p.Table-title-small {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.8em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+    margin-top:15px;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	page-break-after:avoid;
+	text-align:left;
+	orphans:99;
+	widows:1;
+}
+p.Continued {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+    margin-top:15px;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	page-break-after:avoid;
+	text-align:left;
+	orphans:99;
+	widows:1;
+}
+
+p.Table-title-next-page {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+    margin-top:15px;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	page-break-after:avoid;
+	text-align:left;
+	orphans:99;
+	widows:1;
+    display:run-in;
+    float: left;
+}
+    
+p.Table-title-next-page-2-columns {
+	-epub-hyphens:none;
+	-webkit-hyphens:none;
+	color:#e36c0a;
+	font-family:"Avenir Next LT Pro Regular", "Calibri", sans-serif;
+	font-size:0.9em;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+    margin-top:15px;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	page-break-after:avoid;
+	text-align:left;
+	orphans:99;
+	widows:1;
+				   
+				
+}
+
+
+/* Divs */
+div.Copyright_frame {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    padding: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    page-break-before: always;
+    display: inline-block;
+}
+
+div.Author {
+    float:right;
+}
+div.Signature {
+    float:right;
+    margin-top: 8px;
+    margin-left: 8px;
+    margin-bottom: 8px;
+}
+
+p.No-export_Signature-right-aligned { 
+    text-align: right;
+}
+
+div.Figure {
+    
+}
+
+div.intercalaires {
+    
+}
+
+div.Figure-element { 
+    page-break-inside: avoid;
+}
+
+div.Figure_wrap {
+    float:left;
+    margin-top: 8px;
+    margin-right: 28px;
+    margin-bottom: 18px;
+}
+div.Figure_wrap_right {
+    float:right;
+    margin-top: 8px;
+    margin-right: 28px;
+    margin-bottom: 18px;
+}
+div.Acknowledgements {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    padding: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    margin-left: 0.5em;
+    margin-right: 0.5em; 
+}
+
+div.Box-inline {
+    background-color: #ededed;
+    padding: .75em;
+    margin-bottom: 20px;
+    page-break-inside: avoid;
+}
+div.Box {
+    background-color: #ededed;
+    padding: .75em;
+    margin-bottom: 20px;
+    page-break-inside: avoid;
+}
+
+div.Box-with-figure-center {
+    background: #ededed;
+    padding: 5px;
+    page-break-inside: avoid; 
+}
+
+div.Box-with-figure {
+    background: #ededed;
+    padding: 5px;
+    page-break-inside: avoid;
+}
+
+div.Figure-within-box {
+    float: left;
+    margin-right: 10px;
+}
+div.Box-element-floating {
+    background-color: #ededed;
+    padding: .75em;
+    margin-bottom: 20px;
+    page-break-inside: avoid;
+}
+.No-export_list-item-spacing {
+    margin-right: 5px;
+}

@@ -1,0 +1,75 @@
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bookid" prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:title id="id">弥合数字创新鸿沟</dc:title>
+    <dc:creator id="id-2">ITU</dc:creator>
+    <dc:rights>© ITU 2020</dc:rights>
+    <dc:identifier>calibre:69</dc:identifier>
+    <dc:identifier>uuid:f57af9d4-61e3-49ae-959d-7a3db66594e3</dc:identifier>
+    <dc:identifier id="bookid">urn:uuid:f477f786-0d75-4a43-a6a1-df52e7ce9a42</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:contributor id="id-1">calibre (6.25.0) [https://calibre-ebook.com]</dc:contributor>
+    <dc:date>2020-12-15T00:00:00+00:00</dc:date>
+    <dc:publisher>International Telecommunication Union</dc:publisher>
+    <meta name="generator" content="Adobe InDesign 15.0.2"/>
+    <meta name="cover" content="x1.png"/>
+    <meta property="ibooks:specified-fonts">true</meta>
+    <meta refines="#id" property="title-type">main</meta>
+    <meta refines="#id" property="file-as">弥合数字创新鸿沟</meta>
+    <meta property="dcterms:modified">2021-04-08T08:59:27Z</meta>
+    <meta refines="#id-1" property="role" scheme="marc:relators">bkp</meta>
+    <meta refines="#id-2" property="role" scheme="marc:relators">aut</meta>
+    <meta refines="#id-2" property="file-as">ITU</meta>
+  </metadata>
+  <manifest>
+    <item id="cover" href="cover.xhtml" media-type="application/xhtml+xml"/>
+    <item id="output-1" href="output-1.xhtml" media-type="application/xhtml+xml"/>
+    <item id="output-1-1" href="output-1-1.xhtml" media-type="application/xhtml+xml"/>
+    <item id="output-1-2" href="output-1-2.xhtml" media-type="application/xhtml+xml"/>
+    <item id="toc" href="toc.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
+    <item id="idGeneratedStyles.css" href="css/idGeneratedStyles.css" media-type="text/css"/>
+    <item id="ITU_generic.css" href="css/ITU_generic.css" media-type="text/css"/>
+    <item id="x1.png" href="image/1.png" media-type="image/png" properties="cover-image"/>
+    <item id="x20-00196_backCover.png" href="image/20-00196_backCover.png" media-type="image/png"/>
+    <item id="x20-00196_frontCover.png" href="image/20-00196_frontCover.png" media-type="image/png"/>
+    <item id="x20-00196_page3.png" href="image/20-00196_page3.png" media-type="image/png"/>
+    <item id="x20-00196_Toolkit_for_creating_ICT-Centric_ecosystem_projects_BAT4C_1.png" href="image/20-00196_Toolkit_for_creating_ICT-Centric_ecosystem_projects_BAT4C_1.png" media-type="image/png"/>
+    <item id="x20-00196_Toolkit_for_creating_ICT-Centric_ecosystem_projects_BAT4C_2.png" href="image/20-00196_Toolkit_for_creating_ICT-Centric_ecosystem_projects_BAT4C_2.png" media-type="image/png"/>
+    <item id="x20-00196_Toolkit_for_creating_ICT-Centric_ecosystem_projects_BAT4C_3.png" href="image/20-00196_Toolkit_for_creating_ICT-Centric_ecosystem_projects_BAT4C_3.png" media-type="image/png"/>
+    <item id="x20-00196_Toolkit_for_creating_ICT-Centric_ecosystem_projects_BAT4C_4.png" href="image/20-00196_Toolkit_for_creating_ICT-Centric_ecosystem_projects_BAT4C_4.png" media-type="image/png"/>
+    <item id="x20-00196_Toolkit_for_creating_ICT-Centric_ecosystem_projects_BAT4C_5.png" href="image/20-00196_Toolkit_for_creating_ICT-Centric_ecosystem_projects_BAT4C_5.png" media-type="image/png"/>
+    <item id="x20-00196_Toolkit_for_creating_ICT-Centric_ecosystem_projects_BAT4C_6.png" href="image/20-00196_Toolkit_for_creating_ICT-Centric_ecosystem_projects_BAT4C_6.png" media-type="image/png"/>
+    <item id="Untitled-1.png" href="image/Untitled-1.png" media-type="image/png"/>
+    <item id="Untitled-11.png" href="image/Untitled-11.png" media-type="image/png"/>
+    <item id="Untitled-12.png" href="image/Untitled-12.png" media-type="image/png"/>
+    <item id="Untitled-13.png" href="image/Untitled-13.png" media-type="image/png"/>
+    <item id="Untitled-14.png" href="image/Untitled-14.png" media-type="image/png"/>
+    <item id="Untitled-15.png" href="image/Untitled-15.png" media-type="image/png"/>
+    <item id="Untitled-16.png" href="image/Untitled-16.png" media-type="image/png"/>
+    <item id="Untitled-17.png" href="image/Untitled-17.png" media-type="image/png"/>
+    <item id="Untitled-18.png" href="image/Untitled-18.png" media-type="image/png"/>
+    <item id="Untitled-19.png" href="image/Untitled-19.png" media-type="image/png"/>
+    <item id="Untitled-2.png" href="image/Untitled-2.png" media-type="image/png"/>
+    <item id="Untitled-4-1.png" href="image/Untitled-4-1.png" media-type="image/png"/>
+    <item id="Untitled-5-1.png" href="image/Untitled-5-1.png" media-type="image/png"/>
+    <item id="Untitled-6.png" href="image/Untitled-6.png" media-type="image/png"/>
+    <item id="Untitled-7.png" href="image/Untitled-7.png" media-type="image/png"/>
+    <item id="Untitled-8-1.png" href="image/Untitled-8-1.png" media-type="image/png"/>
+    <item id="Untitled-9.png" href="image/Untitled-9.png" media-type="image/png"/>
+    <item id="Untitled-A2.png" href="image/Untitled-A2.png" media-type="image/png"/>
+    <item id="Untitled-A3.png" href="image/Untitled-A3.png" media-type="image/png"/>
+    <item id="Untitled-A4.png" href="image/Untitled-A4.png" media-type="image/png"/>
+    <item id="Untitled-table1.png" href="image/Untitled-table1.png" media-type="image/png"/>
+    <item id="Calibri-Light.ttf" href="font/Calibri-Light.ttf" media-type="application/vnd.ms-opentype"/>
+    <item id="FZDBSJW--GB1-0.TTF" href="font/FZDBSJW--GB1-0.TTF" media-type="application/x-font-ttf"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="cover" linear="no"/>
+    <itemref idref="output-1"/>
+    <itemref idref="output-1-1"/>
+    <itemref idref="output-1-2"/>
+  </spine>
+  <guide>
+    <reference type="cover" href="cover.xhtml" title="Cover"/>
+  </guide>
+</package>
